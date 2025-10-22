@@ -420,7 +420,7 @@ export default function DXProjectDetail() {
                 <div className="space-y-1">
                   <div>📁 project-root/</div>
                   <div className="ml-4">├── 📁 package.json</div>
-                  <div className="ml-4">└── 📁 "postinstall": "node scripts/add-namespaces.ts"</div>
+                  <div className="ml-4">└── 📁 &quot;postinstall&quot;: &quot;node scripts/add-namespaces.ts&quot;</div>
                   <div className="ml-4">├── 📁 scripts/</div>
                   <div className="ml-8">├── 📄 add-namespaces.ts</div>
                   <div className="ml-8">├── 📄 setup-namespaces.ts</div>
@@ -579,7 +579,7 @@ export default function DXProjectDetail() {
             </CardHeader>
             <CardContent>
               <blockquote className="italic text-sm text-muted-foreground border-l-4 border-green-500 pl-4">
-                "Gradle 업그레이드로 인한 빌드 오류가 완전히 사라졌습니다. 신규 라이브러리 추가할 때마다 걱정하지 않아도 되어서 정말 큰 도움이 됩니다."
+                &quot;Gradle 업그레이드로 인한 빌드 오류가 완전히 사라졌습니다. 신규 라이브러리 추가할 때마다 걱정하지 않아도 되어서 정말 큰 도움이 됩니다.&quot;
               </blockquote>
               <p className="text-xs text-muted-foreground mt-2 text-right">- 개발팀</p>
             </CardContent>

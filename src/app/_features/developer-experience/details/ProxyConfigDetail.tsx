@@ -99,13 +99,13 @@ export default function ProxyConfigDetail() {
                   <h4 className="font-medium text-sm mb-2">Vite 서버 프록시 설정</h4>
                   <div className="bg-muted rounded-lg p-3 font-mono text-xs text-foreground">
                     <div className="space-y-1">
-                      <div className="text-muted-foreground">// vite.config.ts</div>
+                      <div className="text-muted-foreground">{/* vite.config.ts */}</div>
                       <div>server: isDevelop ? {'{'}</div>
                       <div className="ml-4">proxy: {'{'}</div>
-                      <div className="ml-8">'/car-api': {'{'}</div>
+                      <div className="ml-8">&apos;/car-api&apos;: {'{'}</div>
                       <div className="ml-12">target: process.env.VITE_SERVER_URL_CAR,</div>
                       <div className="ml-12">changeOrigin: true,</div>
-                      <div className="ml-12">rewrite: (path) =&gt; path.replace(/^\/car-api/, '/api')</div>
+                      <div className="ml-12">rewrite: (path) =&gt; path.replace(/^\/car-api/, &apos;/api&apos;)</div>
                       <div className="ml-8">{'}'}</div>
                       <div className="ml-4">{'}'}</div>
                       <div>{'}'} : undefined</div>
