@@ -753,7 +753,7 @@ function ImplementationDetails() {
                   </div>
                   <div className="relative w-full aspect-[9/19.5] mx-auto rounded-lg overflow-hidden border-2 border-green-500/30">
                     <Image
-                      src="/naver.png"
+                      src="/images/naver.png"
                       alt="네이버 앱 화면"
                       fill
                       className="object-cover object-top"
@@ -772,7 +772,7 @@ function ImplementationDetails() {
                   </div>
                   <div className="relative w-full aspect-[9/19.5] mx-auto rounded-lg overflow-hidden border-2 border-blue-500/30">
                     <Image
-                      src="/lotte.png"
+                      src="/images/lotte.png"
                       alt="롯데 앱 화면"
                       fill
                       className="object-cover object-top"
@@ -940,7 +940,7 @@ function ResultsAndImpact() {
             <div className="flex justify-center">
               <div className="relative w-full max-w-md">
                 <Image
-                  src="/lighthouse.png"
+                  src="/images/lighthouse.png"
                   alt="Lighthouse 성능 지표 100점"
                   width={413}
                   height={125}
