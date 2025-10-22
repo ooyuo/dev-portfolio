@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 개발자 포트폴리오
 
-## Getting Started
+Next.js 15 기반의 개인 포트폴리오 웹사이트입니다.
 
-First, run the development server:
+## 기술 스택
+
+- **Framework**: Next.js 15.5.4 (App Router)
+- **Language**: TypeScript 5
+- **Styling**: Tailwind CSS 4
+- **Animation**: GSAP 3.13, Framer Motion 12
+- **Smooth Scroll**: Lenis 1.3
+- **UI Components**: Radix UI
+- **Theme**: next-themes (다크/라이트 모드)
+- **Icons**: Lucide React
+- **Font**: Pretendard
+
+## 주요 기능
+
+- **반응형 디자인**: 모바일, 태블릿, 데스크톱 최적화
+- **다크/라이트 테마**: 사용자 선호도 저장 및 깜빡임 없는 테마 전환
+- **스무스 스크롤**: Lenis를 활용한 부드러운 스크롤 경험
+- **GSAP 애니메이션**: ScrollTrigger 기반 인터랙티브 애니메이션
+- **프로젝트 상세**: Dialog 기반 프로젝트 상세 정보 제공
+- **이력서 다운로드**: PDF 이력서 다운로드 기능
+- **접근성**: ARIA 속성 및 키보드 네비게이션 지원
+
+## 시작하기
+
+### 설치
+
+```bash
+npm install
+```
+
+### 개발 서버 실행
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+브라우저에서 [http://localhost:3000](http://localhost:3000)을 열어 결과를 확인하세요.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 빌드
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+### 프로덕션 실행
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 프로젝트 구조
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+├── app/
+│   ├── _components/        # 공통 컴포넌트
+│   │   ├── common/         # Dialog, ThemeToggle 등
+│   │   ├── effects/        # 배경 효과
+│   │   └── providers/      # Context Provider
+│   ├── _features/          # 섹션별 기능
+│   │   ├── about/          # 소개 섹션
+│   │   ├── hero/           # 히어로 섹션
+│   │   ├── projects/       # 프로젝트 섹션
+│   │   └── developer-experience/  # DX 개선 사례
+│   ├── layout.tsx          # 루트 레이아웃
+│   └── page.tsx            # 메인 페이지
+├── components/ui/          # Radix UI 기반 컴포넌트
+├── design-system/          # 디자인 시스템
+├── lib/                    # 유틸리티 함수
+└── public/
+    ├── images/             # 이미지 파일
+    ├── documents/          # 문서 파일
+    └── fonts/              # 폰트 파일
+```
 
-## Deploy on Vercel
+## 라이선스
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
