@@ -32,7 +32,7 @@ export default function ChatbotProjectDetail() {
           <div className="p-2 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg">
             <MessageSquare className="w-6 h-6 text-white" />
           </div>
-          금융권 대화형 챗봇 만들기
+          금융권 대화형 챗봇 서비스 구축
         </CustomDialogTitle>
         <p className="text-sm text-muted-foreground mt-2">
           금융 상품 추천하고 계좌 조회하고 만기 알림 보내는 챗봇 개발
