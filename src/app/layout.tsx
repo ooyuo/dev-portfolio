@@ -21,17 +21,40 @@ export default function RootLayout({
   return (
     <html lang="ko" className="lenis lenis-smooth" suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://cdn.jsdelivr.net" />
         <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
         <link
           rel="preload"
-          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css"
-          as="style"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-Bold.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
         />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css"
-        />
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            @font-face {
+              font-family: 'Pretendard';
+              font-style: normal;
+              font-weight: 400;
+              font-display: swap;
+              src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-Regular.woff2') format('woff2');
+            }
+            @font-face {
+              font-family: 'Pretendard';
+              font-style: normal;
+              font-weight: 600;
+              font-display: swap;
+              src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-SemiBold.woff2') format('woff2');
+            }
+            @font-face {
+              font-family: 'Pretendard';
+              font-style: normal;
+              font-weight: 700;
+              font-display: swap;
+              src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-Bold.woff2') format('woff2');
+            }
+          `
+        }} />
         <script
           dangerouslySetInnerHTML={{
             __html: `

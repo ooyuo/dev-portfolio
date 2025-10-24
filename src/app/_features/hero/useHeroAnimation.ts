@@ -13,8 +13,10 @@ export const useHeroAnimation = (
     // 즉시 onReady 호출
     onReady()
 
-    // GSAP 동적 import - 초기 렌더링 차단 방지
-    import('gsap').then(({ default: gsap }) => {
+    // LCP 최적화: 애니메이션을 idle 상태에서 로드
+    const loadAnimation = () => {
+      // GSAP 동적 import - 초기 렌더링 차단 방지
+      import('gsap').then(({ default: gsap }) => {
       // 초기 애니메이션 (부드럽게 등장)
       gsap.fromTo(words,
         {
@@ -117,7 +119,16 @@ export const useHeroAnimation = (
             duration: 1.5
           })
       }
-    })
+      })
+    }
+
+    // requestIdleCallback으로 애니메이션 지연 (LCP 최적화)
+    if ('requestIdleCallback' in window) {
+      const win = window as Window & { requestIdleCallback: (callback: () => void, options?: { timeout: number }) => void }
+      win.requestIdleCallback(loadAnimation, { timeout: 500 })
+    } else {
+      setTimeout(loadAnimation, 100)
+    }
   }, [containerRef, scrollIndicatorRef, onReady])
 }
 
