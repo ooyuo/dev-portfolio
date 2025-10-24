@@ -96,6 +96,7 @@ export default function GifticonProjectDetail() {
             <DialogTitle className="text-sm">{selectedImage?.alt}</DialogTitle>
           </DialogHeader>
           <div className="flex items-center justify-center w-full h-full">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={selectedImage?.src}
               alt={selectedImage?.alt}
