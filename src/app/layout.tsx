@@ -1,8 +1,32 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
 import GradientBackground from "./_components/effects/GradientBackground";
 import SmoothScrollProvider from "./_components/providers/SmoothScrollProvider";
 import ThemeToggle from "./_components/common/ThemeToggle";
+
+const pretendard = localFont({
+  src: [
+    {
+      path: "../../public/fonts/Pretendard-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Pretendard-SemiBold.otf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Pretendard-Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-pretendard",
+  display: "swap",
+  preload: true,
+});
 
 export const metadata: Metadata = {
   title: "정도윤 | Frontend Engineer",
@@ -21,43 +45,6 @@ export default function RootLayout({
   return (
     <html lang="ko" className="lenis lenis-smooth" suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-        <link
-          rel="preload"
-          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2-subset/Pretendard-Bold.subset.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <style dangerouslySetInnerHTML={{
-          __html: `
-            @font-face {
-              font-family: 'Pretendard';
-              font-style: normal;
-              font-weight: 400;
-              font-display: swap;
-              src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2-subset/Pretendard-Regular.subset.woff2') format('woff2');
-              unicode-range: U+AC00-D7A3, U+1100-11FF, U+3130-318F, U+A960-A97F, U+D7B0-D7FF, U+0020-007E, U+3000-303F, U+FF00-FFEF;
-            }
-            @font-face {
-              font-family: 'Pretendard';
-              font-style: normal;
-              font-weight: 600;
-              font-display: swap;
-              src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2-subset/Pretendard-SemiBold.subset.woff2') format('woff2');
-              unicode-range: U+AC00-D7A3, U+1100-11FF, U+3130-318F, U+A960-A97F, U+D7B0-D7FF, U+0020-007E, U+3000-303F, U+FF00-FFEF;
-            }
-            @font-face {
-              font-family: 'Pretendard';
-              font-style: normal;
-              font-weight: 700;
-              font-display: swap;
-              src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2-subset/Pretendard-Bold.subset.woff2') format('woff2');
-              unicode-range: U+AC00-D7A3, U+1100-11FF, U+3130-318F, U+A960-A97F, U+D7B0-D7FF, U+0020-007E, U+3000-303F, U+FF00-FFEF;
-            }
-          `
-        }} />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -72,7 +59,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-sans antialiased" style={{ fontFamily: 'Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif' }}>
+      <body className={`${pretendard.variable} font-sans antialiased`}>
         <GradientBackground />
         <ThemeToggle />
         <SmoothScrollProvider>

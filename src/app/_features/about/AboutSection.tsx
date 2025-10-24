@@ -25,7 +25,7 @@ export default function AboutSection() {
                     src="/images/profile.JPG"
                     alt="정도윤 프로필 사진"
                     fill
-                    sizes="96px"
+                    sizes="168px"
                     className="object-cover"
                     priority
                   />
