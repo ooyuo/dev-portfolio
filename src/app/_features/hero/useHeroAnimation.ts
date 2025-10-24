@@ -1,5 +1,4 @@
 import { useEffect, RefObject } from 'react'
-import gsap from 'gsap'
 
 export const useHeroAnimation = (
   containerRef: RefObject<HTMLDivElement | null>,
@@ -11,33 +10,44 @@ export const useHeroAnimation = (
 
     const words = containerRef.current.querySelectorAll('.word')
 
-    // 폰트 로드 완료 후 실행
-    document.fonts.ready.then(() => {
-      onReady()
+    // 즉시 onReady 호출
+    onReady()
 
-      gsap.to(words, {
-        y: 0,
-        opacity: 1,
-        rotation: 0,
-        stagger: 0.2,
-        duration: 1.5,
-        ease: 'back.out(1.7)'
-      })
+    // GSAP 동적 import - 초기 렌더링 차단 방지
+    import('gsap').then(({ default: gsap }) => {
+      // 초기 애니메이션 (부드럽게 등장)
+      gsap.fromTo(words,
+        {
+          y: -20,
+          opacity: 0,
+          rotation: -5,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          rotation: 0,
+          stagger: 0.15,
+          duration: 1,
+          ease: 'back.out(1.2)'
+        }
+      )
 
       // 지속적인 부드러운 움직임
-      words.forEach((word, index) => {
-        gsap.to(word, {
-          y: '+=15',
-          rotation: '+=3',
-          duration: 2 + index * 0.3,
-          repeat: -1,
-          yoyo: true,
-          ease: 'sine.inOut',
-          delay: index * 0.2
+      setTimeout(() => {
+        words.forEach((word, index) => {
+          gsap.to(word, {
+            y: '+=15',
+            rotation: '+=3',
+            duration: 2 + index * 0.3,
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut',
+            delay: index * 0.2
+          })
         })
-      })
+      }, 800)
 
-      // Scroll to explore 애니메이션 - ref 사용
+      // Scroll to explore 애니메이션
       if (scrollIndicatorRef.current) {
         const mouseScroll = scrollIndicatorRef.current.querySelector('.mouse-scroll')
         const chevronDown = scrollIndicatorRef.current.querySelector('.chevron-down')
@@ -64,7 +74,7 @@ export const useHeroAnimation = (
           })
         }
 
-        // Entire indicator bounce animation (통통 튀는 효과)
+        // Entire indicator bounce animation
         const bounceTl = gsap.timeline({ repeat: -1 })
 
         bounceTl

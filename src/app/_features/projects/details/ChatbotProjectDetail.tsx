@@ -8,7 +8,6 @@ import {
   Users,
   Calendar,
   Target,
-  Lightbulb,
   GitBranch,
   Code2,
   Shield,

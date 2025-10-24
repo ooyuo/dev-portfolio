@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -17,14 +18,9 @@ import {
   Package,
   AlertCircle,
   Rocket,
-  Settings,
-  Palette,
   Database,
   Gauge,
-  Puzzle,
   FileText,
-  Box,
-  Folder,
   X,
   Check,
   ShoppingCart,
@@ -36,7 +32,6 @@ import {
   Boxes,
   Network,
   ListChecks,
-  Sparkles,
   Maximize2
 } from 'lucide-react'
 
@@ -645,9 +640,12 @@ function ImplementationDetails({ onImageClick }: { onImageClick: (image: { src: 
                   className="relative group cursor-pointer mb-2"
                   onClick={() => onImageClick({ src: '/images/product_1.png', alt: '1단계: 브랜드·카테고리 선택' })}
                 >
-                  <img
+                  <Image
                     src="/images/product_1.png"
                     alt="1단계: 브랜드·카테고리 선택"
+                    width={400}
+                    height={300}
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     className="w-full rounded transition-all group-hover:brightness-75"
                   />
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -668,9 +666,12 @@ function ImplementationDetails({ onImageClick }: { onImageClick: (image: { src: 
                   className="relative group cursor-pointer mb-2"
                   onClick={() => onImageClick({ src: '/images/product_2.png', alt: '2단계: 상품 정보 입력' })}
                 >
-                  <img
+                  <Image
                     src="/images/product_2.png"
                     alt="2단계: 상품 정보 입력"
+                    width={400}
+                    height={300}
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     className="w-full rounded transition-all group-hover:brightness-75"
                   />
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -691,9 +692,12 @@ function ImplementationDetails({ onImageClick }: { onImageClick: (image: { src: 
                   className="relative group cursor-pointer mb-2"
                   onClick={() => onImageClick({ src: '/images/product_3.png', alt: '3단계: 플랫폼별 설정' })}
                 >
-                  <img
+                  <Image
                     src="/images/product_3.png"
                     alt="3단계: 플랫폼별 설정"
+                    width={400}
+                    height={300}
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     className="w-full rounded transition-all group-hover:brightness-75"
                   />
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -732,9 +736,12 @@ function ImplementationDetails({ onImageClick }: { onImageClick: (image: { src: 
                 className="relative group cursor-pointer mb-2"
                 onClick={() => onImageClick({ src: '/images/gifticon.png', alt: '기프티콘 재고 등록' })}
               >
-                <img
+                <Image
                   src="/images/gifticon.png"
                   alt="기프티콘 재고 등록"
+                  width={800}
+                  height={600}
+                  sizes="100vw"
                   className="w-full rounded transition-all group-hover:brightness-75"
                 />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">

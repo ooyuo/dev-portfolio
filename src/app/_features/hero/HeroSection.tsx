@@ -13,7 +13,7 @@ export default function HeroSection() {
   return (
     <section className="hero-section h-screen flex items-center justify-center relative">
       <div className="container w-[90vw] flex flex-col items-center" ref={containerRef}>
-        <h1 className="text-6xl font-bold flex flex-wrap items-center justify-center gap-1" style={{ opacity: isReady ? 1 : 0 }}>
+        <h1 className="text-6xl font-bold flex flex-wrap items-center justify-center gap-1">
           <span className="word">I&apos;m</span>
           <span className="word">a</span>
           <span className="word">frontend</span>
@@ -60,8 +60,6 @@ export default function HeroSection() {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          opacity: 0;
-          transform: translateY(-100px);
         }
 
         :global(.dark .word) {

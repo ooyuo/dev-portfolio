@@ -19,7 +19,6 @@ import {
   TrendingUp,
   CheckCircle2,
   AlertCircle,
-  Lightbulb,
   Rocket,
   Car,
   Smartphone,
@@ -28,20 +27,15 @@ import {
   Palette,
   Wrench,
   Database,
-  Hammer,
-  Gauge,
   Puzzle,
   FileText,
   FishIcon,
   Box,
   Folder,
   Lock,
-  Circle,
-  Frown,
   X,
   Check
 } from 'lucide-react'
-import { CodeEditor } from '@/components/ui/shadcn-io/code-editor'
 import Image from 'next/image'
 
 export default function ProjectDetail() {
@@ -756,6 +750,7 @@ function ImplementationDetails() {
                       src="/images/naver.png"
                       alt="네이버 앱 화면"
                       fill
+                      sizes="(max-width: 768px) 50vw, 288px"
                       className="object-cover object-top"
                     />
                   </div>
@@ -775,6 +770,7 @@ function ImplementationDetails() {
                       src="/images/lotte.png"
                       alt="롯데 앱 화면"
                       fill
+                      sizes="(max-width: 768px) 50vw, 288px"
                       className="object-cover object-top"
                     />
                   </div>

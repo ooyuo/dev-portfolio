@@ -1,62 +1,8 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import GradientBackground from "./_components/effects/GradientBackground";
 import SmoothScrollProvider from "./_components/providers/SmoothScrollProvider";
 import ThemeToggle from "./_components/common/ThemeToggle";
-
-const pretendard = localFont({
-  src: [
-    {
-      path: "../../public/fonts/Pretendard-Thin.otf",
-      weight: "100",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/Pretendard-ExtraLight.otf",
-      weight: "200",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/Pretendard-Light.otf",
-      weight: "300",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/Pretendard-Regular.otf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/Pretendard-Medium.otf",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/Pretendard-SemiBold.otf",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/Pretendard-Bold.otf",
-      weight: "700",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/Pretendard-ExtraBold.otf",
-      weight: "800",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/Pretendard-Black.otf",
-      weight: "900",
-      style: "normal",
-    },
-  ],
-  variable: "--font-pretendard",
-  preload: true,
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "정도윤 | Frontend Engineer",
@@ -73,8 +19,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="lenis lenis-smooth" suppressHydrationWarning>
+    <html lang="ko" className="lenis lenis-smooth" suppressHydrationWarning>
       <head>
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="anonymous" />
+        <link
+          rel="preload"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css"
+          as="style"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css"
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -89,7 +46,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${pretendard.variable} font-sans antialiased`}>
+      <body className="font-sans antialiased" style={{ fontFamily: 'Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif' }}>
         <GradientBackground />
         <ThemeToggle />
         <SmoothScrollProvider>

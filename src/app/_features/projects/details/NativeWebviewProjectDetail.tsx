@@ -14,9 +14,7 @@ import {
   Trophy,
   Target,
   Layers,
-  GitBranch,
   Package,
-  BarChart3,
   TrendingUp,
   CheckCircle2,
   AlertCircle,
@@ -26,16 +24,11 @@ import {
   Bell,
   ArrowLeftRight,
   Smartphone,
-  RefreshCw,
-  Settings,
-  Hammer,
-  Gauge,
   X,
   Check,
   MessageSquare,
   Frown
 } from 'lucide-react'
-import { CodeEditor } from '@/components/ui/shadcn-io/code-editor'
 
 export default function NativeWebviewProjectDetail() {
   const [activeSlide, setActiveSlide] = useState(0)
