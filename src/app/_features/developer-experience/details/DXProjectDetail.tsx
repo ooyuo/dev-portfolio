@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
-import { CustomDialogHeader, CustomDialogTitle } from '../../../_components/common/CustomDialog'
+import { CustomDialogHeader, CustomDialogTitle, CustomDialogDescription } from '../../../_components/common/CustomDialog'
 import {
   FileText,
   AlertCircle,
@@ -40,20 +40,22 @@ export default function DXProjectDetail() {
           <Wrench className="w-5 h-5" />
           React Native Android Gradle 7.0+ Migration
         </CustomDialogTitle>
+        <CustomDialogDescription className="sr-only">
+          Android Gradle Plugin 7.0+ 업그레이드로 인한 namespace 필수화 문제 해결 프로젝트
+        </CustomDialogDescription>
       </CustomDialogHeader>
 
-      <div className="h-full flex flex-col">
-        {/* 네비게이션 탭 */}
-        <div className="px-4 pt-2 pb-0 flex-shrink-0">
+      {/* 네비게이션 탭 */}
+      <div className="px-4 pt-2 pb-0 flex-shrink-0">
         <div className="flex gap-1 overflow-x-auto pb-2">
           {tabs.map((tab, index) => (
             <Button
               key={tab.id}
-              variant={activeTab === index ? "default" : "outline"}
+              variant="outline"
               size="sm"
               onClick={() => setActiveTab(index)}
               className={`flex items-center gap-1 whitespace-nowrap text-xs py-1 px-2 ${
-                activeTab === index ? 'bg-secondary text-secondary-foreground' : ''
+                activeTab === index ? 'bg-teal-500 dark:bg-teal-500 text-gray-900 dark:text-gray-900 border-teal-500 hover:bg-teal-600 dark:hover:bg-teal-600' : 'hover:bg-accent'
               }`}
             >
               <tab.icon className="w-3 h-3" />
@@ -267,45 +269,47 @@ export default function DXProjectDetail() {
               <CardTitle className="text-base">기존 개발환경 설정 프로세스</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="flex items-center justify-between gap-2 text-xs">
-                <div className="text-center flex flex-col items-center">
-                  <div className="w-16 h-16 rounded-full bg-red-500/20 flex items-center justify-center mb-2">
-                    <span className="text-2xl font-bold text-red-500">1</span>
+              <div className="overflow-x-auto pb-4">
+                <div className="flex items-center justify-between gap-2 text-xs min-w-max pb-2">
+                  <div className="text-center flex flex-col items-center min-w-[120px]">
+                    <div className="w-16 h-16 rounded-full bg-red-500/20 flex items-center justify-center mb-2">
+                      <span className="text-2xl font-bold text-red-500">1</span>
+                    </div>
+                    <p className="font-medium">프로젝트 클론</p>
+                    <p className="text-muted-foreground">Git repository 소스코드 다운로드</p>
                   </div>
-                  <p>프로젝트 클론</p>
-                  <p className="text-muted-foreground">Git repository 소스코드 다운로드</p>
-                </div>
-                <ArrowRight className="w-4 h-4 text-muted-foreground" />
-                <div className="text-center flex flex-col items-center">
-                  <div className="w-16 h-16 rounded-full bg-red-500/20 flex items-center justify-center mb-2">
-                    <span className="text-2xl font-bold text-red-500">2</span>
+                  <ArrowRight className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+                  <div className="text-center flex flex-col items-center min-w-[120px]">
+                    <div className="w-16 h-16 rounded-full bg-red-500/20 flex items-center justify-center mb-2">
+                      <span className="text-2xl font-bold text-red-500">2</span>
+                    </div>
+                    <p className="font-medium">의존성 설치</p>
+                    <p className="text-muted-foreground">npm install 실행</p>
                   </div>
-                  <p>의존성 설치</p>
-                  <p className="text-muted-foreground">npm install 실행</p>
-                </div>
-                <ArrowRight className="w-4 h-4 text-muted-foreground" />
-                <div className="text-center flex flex-col items-center">
-                  <div className="w-16 h-16 rounded-full bg-red-500/20 flex items-center justify-center mb-2">
-                    <span className="text-2xl font-bold text-red-500">3</span>
+                  <ArrowRight className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+                  <div className="text-center flex flex-col items-center min-w-[140px]">
+                    <div className="w-16 h-16 rounded-full bg-red-500/20 flex items-center justify-center mb-2">
+                      <span className="text-2xl font-bold text-red-500">3</span>
+                    </div>
+                    <p className="font-medium">수동 설정 작업 (30-60분)</p>
+                    <p className="text-muted-foreground">30개+ 라이브러리 build.gradle 파일 수동 수정</p>
                   </div>
-                  <p>수동 설정 작업 (30-60분)</p>
-                  <p className="text-muted-foreground">30개+ 라이브러리 build.gradle 파일 수동 수정</p>
-                </div>
-                <ArrowRight className="w-4 h-4 text-muted-foreground" />
-                <div className="text-center flex flex-col items-center">
-                  <div className="w-16 h-16 rounded-full bg-red-500/20 flex items-center justify-center mb-2">
-                    <span className="text-2xl font-bold text-red-500">4</span>
+                  <ArrowRight className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+                  <div className="text-center flex flex-col items-center min-w-[120px]">
+                    <div className="w-16 h-16 rounded-full bg-red-500/20 flex items-center justify-center mb-2">
+                      <span className="text-2xl font-bold text-red-500">4</span>
+                    </div>
+                    <p className="font-medium">설정 오류 디버깅</p>
+                    <p className="text-muted-foreground">빌드 실패 시 누락된 namespace 찾아 수정</p>
                   </div>
-                  <p>설정 오류 디버깅</p>
-                  <p className="text-muted-foreground">빌드 실패 시 누락된 namespace 찾아 수정</p>
-                </div>
-                <ArrowRight className="w-4 h-4 text-muted-foreground" />
-                <div className="text-center flex flex-col items-center">
-                  <div className="w-16 h-16 rounded-full bg-red-500/20 flex items-center justify-center mb-2">
-                    <span className="text-2xl font-bold text-red-500">5</span>
+                  <ArrowRight className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+                  <div className="text-center flex flex-col items-center min-w-[120px]">
+                    <div className="w-16 h-16 rounded-full bg-red-500/20 flex items-center justify-center mb-2">
+                      <span className="text-2xl font-bold text-red-500">5</span>
+                    </div>
+                    <p className="font-medium">개발 시작</p>
+                    <p className="text-muted-foreground">실제 개발 작업 착수 (총 1-2시간 소요)</p>
                   </div>
-                  <p>개발 시작</p>
-                  <p className="text-muted-foreground">실제 개발 작업 착수 (총 1-2시간 소요)</p>
                 </div>
               </div>
             </CardContent>
@@ -601,13 +605,10 @@ export default function DXProjectDetail() {
               </p>
             </CardContent>
           </Card>
-
-         
           </div>
         )}
         </div>
       </div>
-    </div>
     </>
   )
 }

@@ -3,12 +3,23 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Network, Package, TrendingUp, CheckCircle } from 'lucide-react'
+import { CustomDialogHeader, CustomDialogTitle, CustomDialogDescription } from '../../../_components/common/CustomDialog'
 
 export default function ProxyConfigDetail() {
   return (
-    <div className="h-full flex flex-col">
+    <>
+      <CustomDialogHeader className="px-6 pt-6 pb-0 flex-shrink-0">
+        <CustomDialogTitle className="text-2xl font-bold flex items-center gap-2">
+          <Network className="w-6 h-6" />
+          Development Proxy Configuration
+        </CustomDialogTitle>
+        <CustomDialogDescription className="sr-only">
+          로컬 개발 환경을 위한 멀티 서버 프록시 설정 및 경로 재작성 프로젝트
+        </CustomDialogDescription>
+      </CustomDialogHeader>
+
       {/* 헤더 */}
-      <div className="px-6 pt-6 pb-4 flex-shrink-0">
+      <div className="px-6 pt-4 pb-4 flex-shrink-0">
         <div className="bg-gradient-to-br from-green-500/10 to-transparent rounded-xl p-6 border border-green-500/20">
           <div className="flex items-start gap-3 mb-4">
             <Network className="w-6 h-6 text-green-500 mt-1" />
@@ -190,6 +201,6 @@ export default function ProxyConfigDetail() {
           </Card>
         </div>
       </div>
-    </div>
+    </>
   )
 }

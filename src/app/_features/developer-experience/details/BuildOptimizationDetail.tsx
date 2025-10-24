@@ -3,12 +3,23 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Zap, Package, TrendingUp, CheckCircle } from 'lucide-react'
+import { CustomDialogHeader, CustomDialogTitle, CustomDialogDescription } from '../../../_components/common/CustomDialog'
 
 export default function BuildOptimizationDetail() {
   return (
-    <div className="h-full flex flex-col">
+    <>
+      <CustomDialogHeader className="px-6 pt-6 pb-0 flex-shrink-0">
+        <CustomDialogTitle className="text-2xl font-bold flex items-center gap-2">
+          <Zap className="w-6 h-6" />
+          Build Optimization Pipeline
+        </CustomDialogTitle>
+        <CustomDialogDescription className="sr-only">
+          Vite 기반 멀티 레이어 빌드 최적화로 번들 사이즈 및 로딩 성능 개선 프로젝트
+        </CustomDialogDescription>
+      </CustomDialogHeader>
+
       {/* 헤더 */}
-      <div className="px-6 pt-6 pb-4 flex-shrink-0">
+      <div className="px-6 pt-4 pb-4 flex-shrink-0">
         <div className="bg-gradient-to-br from-yellow-500/10 to-transparent rounded-xl p-6 border border-yellow-500/20">
           <div className="flex items-start gap-3 mb-4">
             <Zap className="w-6 h-6 text-yellow-500 mt-1" />
@@ -151,6 +162,6 @@ export default function BuildOptimizationDetail() {
           </Card>
         </div>
       </div>
-    </div>
+    </>
   )
 }
